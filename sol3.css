@@ -1,0 +1,230 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-size:15px;
+    font-family: "Manrope", sans-serif;
+    background-color:hsl(230, 100%, 99%);
+    color:hsl(225, 20%, 60%);
+    font-weight:700;
+}
+.bgimg{
+    width:100%;
+    position:absolute;
+    z-index:-1;
+}
+.header{
+    /* width:1000px; */
+    padding:80px 0px 80px;
+    text-align:center;
+    background-image:url(interactive-pricing-component-main/images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center 40px;
+}
+.header h1{
+    color:black;
+    margin-bottom:10px;
+    font-weight: 900;
+}
+.container{
+    /* width:1000px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    width:500px;
+    background-color:white;
+    border-radius:10px;
+}
+.top,.bottom{
+    padding:40px;
+}
+.price-header{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:20px;
+    align-items: center;
+}
+.pageviews{
+    letter-spacing: 0.2em;
+}
+.price-header .slider{
+    display: none;
+}
+.pricing{
+    display:flex;
+    align-items:center;
+}
+.pricing .sub-pricing{
+    color:black;
+    display:flex;
+    align-items: center;
+}
+.pricing span,.dollar{
+    font-size:30px;
+    font-weight:900;
+}
+.pricing span{
+    padding-right:5px;
+}
+.slider input{
+    width:100%;
+    margin-bottom:50px;
+    appearance: none;
+    height:5px;
+    border-radius:15px;
+    background:linear-gradient(to right,
+        hsl(174, 77%, 80%) 50%,
+        hsl(223, 50%, 87%) 50%
+    );
+
+}
+.slider input::-webkit-slider-thumb{
+    appearance: none;
+    width:40px;
+    height:40px;
+    background-color: hsl(174, 86%, 45%);
+    border-radius:50%;
+    background-image:url(interactive-pricing-component-main/images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 1px 1px 1px hsl(174, 86%, 45%), 0px 10px 20px hsl(174, 86%, 45%);
+}
+.price-selector{
+    display:flex;
+    justify-content: end;
+    font-size:13px;
+    align-items: center;
+}
+.price-selector input{
+    opacity:0;
+    position: absolute;
+    width: 45px;
+    height: 25px;
+    z-index:3;
+}
+.price-selector label{
+    width:40px;
+    height:20px;
+    background-color:hsl(223, 50%, 87%);
+    border-radius:20px;
+    margin:0px 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index:1;
+}
+.price-selector .ball{
+    z-index: 2;
+    position:absolute;
+    background-color:white;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    top:2px;
+    left:2px;
+}
+.price-selector input:checked +.ball{
+    transform:translateX(20px);
+}
+label:hover{
+    background-color: hsl(174, 77%, 80%);
+}
+.price-selector input:checked +.label{
+    background-color: hsl(174, 86%, 45%);
+}
+
+
+
+.discount{
+    color:hsl(15, 100%, 70%);
+    background-color:hsl(14, 92%, 95%);
+    border-radius:15px;
+    padding:2px 10px;
+    font-weight: 700;
+    margin-left:10px;
+    font-size:10px;
+}
+hr{
+    opacity:0.2;
+}
+.bottom{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.bottom ul{
+    list-style: none;
+}
+.bottom li{
+    margin-bottom:10px;
+    font-size:12px;
+}
+.bottom li img{
+    margin-right:15px;
+}
+.bottom a{
+    text-decoration: none;
+    color:white;
+    background-color:hsl(227, 35%, 25%);
+    padding:10px 30px;
+    border-radius:25px;
+    font-size:10px;
+    font-weight: 500;
+}
+@media(max-width:560px){
+    .wrapper{
+        max-width: 350px;
+    }
+    .price-header{
+        display:block;
+        text-align: center;
+    }
+    .slider{
+        display:none;
+    }
+    .slider input{
+        margin:30px 0px;
+    }
+    .price-header .slider{
+        display:block;
+    }
+    .price-header .sliderinput{
+        margin:40px 0px;
+    }
+    .pricing{
+        justify-content:center;
+    }
+    .bottom{
+        display:block;
+        text-align: center;
+        padding:20px;
+        padding-bottom:40px;
+    }
+    ul{
+        margin-bottom:30px;
+    }
+    .price-selector .discount span{
+        display:none;
+    }
+    .header h1{
+        font-size:25px;
+    }
+    .header span{
+        display:block;
+        margin-top:5px;
+    }
+    .header{
+        background-position: center 60px;
+    }
+    .top{
+        padding:40px 30px;
+    }
+    .discount{
+        margin-left:5px;
+    }
+}
